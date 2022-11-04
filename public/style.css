@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    
+}
+.container{
+    width: 500px;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+}
+.container header{
+    display: flex;
+    font-size: 21px;
+    font-weight: 500;
+    color: #43AFFC;
+    padding: 16px 15px;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    
+}
+header i{
+    font-size: 0em;
+    cursor: pointer;
+    margin-right: 8px;
+}
+.container.active header i{
+    font-size: 30px;
+    margin-left: 5px;
+}
+.container .input-part{
+    /* display:none; */
+    margin: 20px 25px 30px;
+}
+.container.active .input-part{
+    display: none;
+}
+
+.input-part .info-text{
+    display:none;
+    font-size: 17px;
+    background: red;
+    text-align: center;
+    padding: 12px 10px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+}
+.info-text.error{
+    display:block;
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+.info-text.pending{
+    display:block;
+    color: #0c5460;
+    background: #d1ecf1;
+    border: 1px solid #bee5eb;
+}
+.input-part :where(input, button){ 
+    width: 100%;
+    height: 55px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-radius: 7px;
+}
+.input-part input{
+    text-align: center;
+    border: 1px solid #bfbfbf;
+}
+.input-part input:is(:focus, :valid){
+    border: 2px solid #43AFFC;
+}
+
+
+.input-part .seperator{
+    height: 1px;
+    width: 100%;
+    margin: 25px 0px;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.seperator::before{  
+/* before selector inserts something before the content of each selected elements*/
+    content: "or";
+    color: #b3b3b3;
+    font-size: 19px;
+    padding: 0 15px;
+    background: #fff;
+}
+
+.input-part button{
+    color: #fff;
+    cursor: pointer;
+    background: #43AFFC
+}
+.input-part button:hover{
+    background: #1f9cf6
+}
+
+.container .weather-part{
+    margin: 30px 0 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.container.active .weather-part{
+    display: flex;
+}
+.icon i{
+    background: #C6FFDD; 
+    background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
+    background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); 
+    color:white;
+    font-size: 90px;
+    border-radius: 10px;
+}
+.weather-part .temp{
+    display:flex;
+    font-size: 72px;
+    font-weight: 500;
+}
+.weather-part .temp .number{
+    font-weight: 600;
+}
+.weather-part .temp .degree{
+    font-size: 40;
+    margin: 10px 5px 0 0;
+}
+.weather-part .location{
+    display: flex;
+    align-items: center;
+    font-size: 21px;
+    margin-bottom: 30px;
+}
+.weather-part .bottom-details{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #bfbfbf;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+.bottom-details .column{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.column i{
+    color:#43AFFC;
+    font-size: 40px;
+}
+.column.humidity{ 
+    /*two selectors with no space will target any element that have a class of both column and humidity */
+    border-left: 1px solid #ccc
+}
+.details .temp,
+.humidity span {
+    font-size: 18px;
+    font-weight: 500;
+    
+}
+.details .temp .degree{
+    margin: 0;
+    font-size: 17px;
+    padding: 0 2px 0 1px;
+}
+.details p{
+    font-size: 14px;
+    margin-top: -5px;
+}
